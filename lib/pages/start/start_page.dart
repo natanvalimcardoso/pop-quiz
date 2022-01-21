@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:popquiz/components/action_button.dart';
+import 'package:popquiz/components/star_button.dart';
 
-class Entrada extends StatelessWidget {
-  Entrada({Key? key}) : super(key: key);
+class StartPage extends StatelessWidget {
+  StartPage({Key? key}) : super(key: key);
 
   TextEditingController valorController = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +48,10 @@ class Entrada extends StatelessWidget {
               ),
             ),
           ),
-          ButtonEntrada(
+          StarButton(
             text: 'Responder',
             onPressed: () {
-              Navigator.pushNamed(context, '/pergunta');
+              Navigator.pushReplacementNamed(context, '/pergunta');
             },
           ),
         ],
@@ -57,24 +59,3 @@ class Entrada extends StatelessWidget {
     );
   }
 }
-
-/* Action Button  */
-class ButtonEntrada extends StatelessWidget {
-  final String? text;
-  final Function()? onPressed;
-
-  ButtonEntrada({
-    this.text,
-    this.onPressed,
-  });
-
-  @override
-  Widget build(BuildContext context) => ElevatedButton(
-        child: Text(
-          text.toString(),
-          style: TextStyle(color: Colors.white),
-        ),
-        onPressed: onPressed,
-      );
-}
-/* AssetImage('assets/images/iniciarBaixo.svg'), */

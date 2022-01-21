@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:popquiz/pages/start/start.dart';
+import 'package:popquiz/pages/start/start_page.dart';
 import 'pages/start/home_page.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Entrada(),
+      initialRoute: '/',
+      routes: {
+        '/':(context) => HomePage(),
+        '/star':(context) => StartPage(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
