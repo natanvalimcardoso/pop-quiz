@@ -51,7 +51,7 @@ class StartPage extends StatelessWidget {
           StarButton(
             text: 'Responder',
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/pergunta');
+              Navigator.pushReplacementNamed(context, '/questionOne');
             },
           ),
         ],
