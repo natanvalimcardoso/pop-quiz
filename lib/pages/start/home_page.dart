@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ConcentricPageView(
-        radius: 40,
+        radius: 25,
         colors: data.map((e) => e.backgroundColor).toList(),
         itemCount: data.length,
         itemBuilder: (int index, double value) {
@@ -121,7 +121,7 @@ class ItemWidget extends StatelessWidget {
                   fontSize: 20,
                 ),
                 textAlign: TextAlign.center,
-                maxLines: 2,
+                maxLines: 3,
               ),
               const Spacer(flex: 10),
               if (temporizador == 3)

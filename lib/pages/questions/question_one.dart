@@ -11,25 +11,32 @@ class QuestionOne extends StatelessWidget {
       child: Column(
         children: [
           QuestionTop(text: 'Qual desses personagens você mais gosta?'),
-          AskButton(
-            text: 'Superman',
-            letter: 'A',
+          Ink(
+            child: AskButton(
+              text: 'Superman',
+              letter: 'A',
+              route: '/questionTwo',
+            ),
           ),
           AskButton(
             text: 'Batman',
             letter: 'B',
+            route: '/questionTwo',
           ),
           AskButton(
             text: 'James Bond',
             letter: 'C',
+            route: '/questionTwo',
           ),
           AskButton(
             text: 'Indiana Jones',
             letter: 'D',
+            route: '/questionTwo,',
           ),
           AskButton(
             text: 'Flash',
             letter: 'E',
+            route: '/questionTwo',
           ),
         ],
       ),
