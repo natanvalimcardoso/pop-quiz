@@ -16,10 +16,7 @@ class QuestionTop extends StatelessWidget {
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10),
-                topLeft: Radius.circular(0),
-                topRight: Radius.circular(0),
               ),
-              shape: BoxShape.rectangle,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
