@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
     ItemData(
       title: "HISTÓRICO",
       subtitle:
-          "No histórico é possivel ver mais detalhes clicando no quadrado laranja",
+          "No histórico é possivel ver mais detalhes clicando no quadrado com o nome do jogador",
       image: const AssetImage("assets/images/historico.png"),
       backgroundColor: Colors.white,
       titleColor:  Color.fromRGBO(0, 10, 56, 1),
@@ -128,7 +128,7 @@ class ItemWidget extends StatelessWidget {
                 StarButton(
                     text: 'Começar',
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed('/star');
+                      Navigator.of(context).pushReplacementNamed('/startPage');
                     })
             ],
           ),

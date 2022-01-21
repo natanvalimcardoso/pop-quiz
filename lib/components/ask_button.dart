@@ -13,6 +13,7 @@ class AskButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: InkWell(
+        borderRadius:BorderRadius.circular(30) ,
         onTap: () {
           Navigator.pushReplacementNamed(context, route);
         },
