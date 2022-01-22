@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:popquiz/components/action_button.dart';
-import 'package:popquiz/components/star_button.dart';
+import 'package:flutter/services.dart';
 
-class StartPage extends StatelessWidget {
+var value = 0;
+
+class StartPage extends StatefulWidget {
   StartPage({Key? key}) : super(key: key);
 
-  TextEditingController valorController = TextEditingController();
-  
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
 
+class _StartPageState extends State<StartPage> {
+  TextEditingController text = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -31,29 +36,46 @@ class StartPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 60, bottom: 20),
+            padding: EdgeInsets.only(top: 60, bottom: 20),
             child: SizedBox(
-              height: 50,
+              height: 70,
               width: 250,
-              child: TextField(
-                controller: valorController,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: 'Digite um apelido',
-                  hintStyle: const TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5),
+              child: Form(
+                key: _formKey,
+                child: TextFormField(
+                  validator: (text) {
+                    if (text == null || text.isEmpty) {
+                      return 'Digite um nome';
+                    }
+                    return null;
+                  },
+                  controller: text,
+                  inputFormatters: [
+                    LengthLimitingTextInputFormatter(10),
+                  ],
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    labelText: 'Digite um nome',
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-          StarButton(
-            text: 'Responder',
+          ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/questionOne');
+              if (_formKey.currentState!.validate()) {
+                setState(() {
+                  Navigator.pushNamed(context, '/questionOne',
+                      arguments: text.text);
+                });
+              }
             },
-          ),
+            child: Text('Começar'),
+          )
         ],
       ),
     );

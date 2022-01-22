@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:popquiz/pages/final/final_question.dart';
+import 'package:popquiz/pages/final/historic.dart';
+import 'package:popquiz/pages/final/personal_history.dart';
 import 'package:popquiz/pages/questions/questio_five.dart';
 import 'package:popquiz/pages/questions/question_four.dart';
 import 'package:popquiz/pages/questions/question_one.dart';
@@ -14,14 +16,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/':(context) => HomePage(),
-        '/startPage':(context) => StartPage(),
-        '/questionOne':(context) => QuestionOne(),
-        '/questionTwo':(context) => QuestionTwo(),
-        '/questionThree':(context) => QuestionThree(),
-        '/questionFour':(context) => QuestionFour(),
-        '/questionFive':(context) => QuestionFive(),
-        '/finalQuestion':(context) => FinalQuestion(),
+        '/': (context) => HomePage(),
+        '/startPage': (context) => StartPage(),
+        '/questionOne': (context) => QuestionOne(),
+        '/questionTwo': (context) => QuestionTwo(),
+        '/questionThree': (context) => QuestionThree(),
+        '/questionFour': (context) => QuestionFour(),
+        '/questionFive': (context) => QuestionFive(),
+        '/finalQuestion': (context) => FinalQuestion(),
+        '/historic': (context) => Historic(),
+        '/personalHistory': (context) => PersonalHistory(),
       },
       debugShowCheckedModeBanner: false,
     );

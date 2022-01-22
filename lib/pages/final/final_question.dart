@@ -41,7 +41,7 @@ class FinalQuestion extends StatelessWidget {
                   text: 'Fazer novamente', route: '/startPage',
                 ),
                 ActionButton(
-                  text: 'Histórico', route: '',
+                  text: 'Histórico', route: '/historic',
                 ),
               ],
             ),

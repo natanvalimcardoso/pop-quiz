@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     ),
     ItemData(
       title: "DICAS PARA JORNADA",
-      subtitle: "Escreva um nome e responda as questões",
+      subtitle: "Escreva um nome de até 10 digitos e responda as questões",
       image: const AssetImage("assets/images/lampada.png"),
       backgroundColor: Colors.white,
       titleColor: const Color.fromRGBO(242, 185, 51, 1),
