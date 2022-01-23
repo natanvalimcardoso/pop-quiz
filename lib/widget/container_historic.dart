@@ -5,7 +5,8 @@ class ContainerHistoric extends StatelessWidget {
   final String result;
   final String route;
 
-  const ContainerHistoric({Key? key, required this.name, required this.result, required this.route})
+  const ContainerHistoric(
+      {Key? key, required this.name, required this.result, required this.route})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
